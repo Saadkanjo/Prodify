@@ -1,0 +1,88 @@
+<div class="add-product-container">
+  <h1>Add New Product</h1>
+
+  <form (ngSubmit)="addProduct()" class="add-product-form" #productForm="ngForm">
+    <!-- Product Name Input -->
+    <div class="form-group">
+      <label for="productName">Product Name</label>
+      <input
+        type="text"
+        id="productName"
+        [(ngModel)]="newProduct.name"
+        name="name"
+        required
+        placeholder="Enter product name"
+        class="form-input"
+        #name="ngModel"
+      />
+      <div *ngIf="name.invalid && name.touched" class="error-message">
+        Product Name is required
+      </div>
+    </div>
+
+    <!-- Product Price Input -->
+    <div class="form-group">
+      <label for="productPrice">Price</label>
+      <input
+        type="number"
+        id="productPrice"
+        [(ngModel)]="newProduct.price"
+        name="price"
+        required
+        placeholder="Enter product price"
+        class="form-input"
+        #price="ngModel"
+        min="0"
+      />
+      <div *ngIf="price.invalid && price.touched" class="error-message">
+        Price is required and must be a valid number
+      </div>
+    </div>
+
+    <!-- Product Description Input -->
+    <div class="form-group">
+      <label for="productDescription">Description</label>
+      <textarea
+        id="productDescription"
+        [(ngModel)]="newProduct.description"
+        name="description"
+        required
+        placeholder="Enter product description"
+        class="form-input"
+        #description="ngModel"
+      ></textarea>
+      <div *ngIf="description.invalid && description.touched" class="error-message">
+        Description is required
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="form-buttons">
+      <button
+        type="submit"
+        class="btn btn-primary"
+        [disabled]="productForm.invalid"
+      >
+        Add Product
+      </button>
+    </div>
+  </form>
+</div>
+<!-- Modal for Unauthenticated Users -->
+<div class="modal fade" id="loginAlertModal" tabindex="-1" aria-labelledby="loginAlertModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="loginAlertModalLabel">Action Required</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        You must be logged in to order a service. Please log in or sign up to continue.
+      </div>
+      <div class="modal-footer">
+        <a href="/login" class="btn btn-primary">Log In</a>
+        <a href="/signup" class="btn btn-secondary">Sign Up</a>
+      </div>
+    </div>
+  </div>
+  </div>

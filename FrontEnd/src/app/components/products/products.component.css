@@ -1,0 +1,116 @@
+/* Overall container styles */
+.products-container {
+    max-width: 800px; /* Set a max width for the product list */
+    margin: 20px auto; /* Center the container */
+    padding: 20px;
+    background-color: #f8f9fa; /* Light background color */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Heading styles */
+h1 {
+    text-align: center; /* Center the title */
+    color: #343a40; /* Darker text color */
+}
+
+/* No products available message */
+.no-products {
+    text-align: center; /* Center align */
+    font-style: italic; /* Italicize for emphasis */
+    color: #6c757d; /* Gray color */
+}
+
+/* Product card styles */
+.product-card {
+    background-color: #ffffff; /* White background for each product */
+    margin: 15px 0; /* Margin between product cards */
+    padding: 15px; /* Padding inside product card */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: transform 0.2s; /* Animation effect for hover */
+}
+
+/* Hover effect for product cards */
+.product-card:hover {
+    transform: scale(1.02); /* Slightly enlarge on hover */
+}
+
+/* Product details styling */
+.product-card h2 {
+    font-size: 1.5rem; /* Larger font size for product name */
+    color: #007bff; /* Blue color for product name */
+    margin-bottom: 10px; /* Margin below the name */
+}
+
+.product-card p {
+    margin: 5px 0; /* Margin for paragraph spacing */
+}
+
+/* Feedback section styles */
+h3 {
+    margin-top: 15px; /* Space above feedback section */
+    color: #343a40; /* Darker text color */
+}
+
+ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+}
+
+li {
+    background-color: #e9ecef; /* Light gray background for feedback items */
+    margin: 10px 0; /* Margin between feedback items */
+    padding: 10px; /* Padding for feedback items */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Feedback text styles */
+li p {
+    margin: 3px 0; /* Margin for feedback text */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .products-container {
+        padding: 10px; /* Less padding on small screens */
+    }
+
+    .product-card {
+        padding: 10px; /* Less padding on small screens */
+    }
+}
+/* Styling for the product actions */
+.product-actions {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+  }
+  
+  .btn {
+    padding: 10px 15px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .btn-edit {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .btn-delete {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .btn-edit:hover {
+    background-color: #0056b3;
+  }
+  
+  .btn-delete:hover {
+    background-color: #c82333;
+  }
+  

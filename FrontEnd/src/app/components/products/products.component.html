@@ -1,0 +1,59 @@
+<div class="products-container">
+  <h1>Product List</h1>
+
+  <!-- Button to go to the Add Product page -->
+  <button (click)="goToAddProduct()">Add New Product</button>
+
+  <!-- If no products are available -->
+  <div *ngIf="productlist.length === 0" class="no-products">
+    <p>No products available.</p>
+  </div>
+
+  <!-- Display the list of products -->
+  <div class="product-card" *ngFor="let product of productlist">
+    <h2>{{ product.name }}</h2>
+    <p><strong>Price:</strong> ${{ product.price }}</p>
+    <p><strong>Description:</strong> {{ product.description }}</p>
+
+    <!-- Display product feedbacks if available -->
+    <div *ngIf="product.feedbacks && product.feedbacks.length > 0">
+      <h3>Feedbacks:</h3>
+      <ul>
+        <li *ngFor="let feedback of product.feedbacks">
+          <p><strong>Comment:</strong> {{ feedback.comment }}</p>
+          <p><strong>Created By:</strong> {{ feedback.createdBy }}</p>
+          <p><strong>Created On:</strong> {{ feedback.createdOn | date:'short' }}</p>
+        </li>
+      </ul>
+    </div>
+
+    <!-- If no feedbacks are available -->
+    <div *ngIf="!product.feedbacks || product.feedbacks.length === 0">
+      <p>No feedbacks available for this product.</p>
+    </div>
+
+    <!-- Edit and Delete Buttons -->
+    <div class="product-actions">
+      <button (click)="editProduct(product.id)" class="btn btn-edit">Edit</button>
+      <button (click)="deleteProduct(product.id)" class="btn btn-delete">Delete</button>
+    </div>
+  </div>
+</div>
+<!-- Modal for Unauthenticated Users -->
+<div class="modal fade" id="loginAlertModal" tabindex="-1" aria-labelledby="loginAlertModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="loginAlertModalLabel">Action Required</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        You must be logged in to order a service. Please log in or sign up to continue.
+      </div>
+      <div class="modal-footer">
+        <a href="/login" class="btn btn-primary">Log In</a>
+        <a href="/signup" class="btn btn-secondary">Sign Up</a>
+      </div>
+    </div>
+  </div>
+  </div>
