@@ -5,8 +5,11 @@ This is an ASP.NET web API that allows users to manage products and feedback thr
 - Product Management: Users can view, add, update, and delete products.
 - Feedback System: Users can provide feedback for products, with the ability to add, update, and delete feedback.
 - Portfolio Management: Users can add products to their portfolio, similar to a cart system for future reference or purchase.
+- UI web made using Angular to do (signup,login and CRUD operations for the products)
 # Technologies used:
 
 1. ASP.NET
 2. Entity Framework (or whatever ORM you are using, if applicable)
 3. SQL Server (or the database technology you are using)
+4. Angular
+5. html,css Bootstrap
